@@ -1,0 +1,26 @@
+{
+    "name": "community-connect-back-end",
+    "version": "1.0.0",
+    "description": "Back-end for Community Connect",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js"
+    },
+    "keywords": [],
+    "author": "2012Inga",
+    "license": "ISC",
+    "dependencies": {
+        "bcrypt": "^5.1.1",
+        "express": "^4.19.2",
+        "express-session": "^1.18.0",
+<<<<<<< HEAD
+        "mysql": "^2.18.1",
+=======
+        "mongoose": "^8.3.4",
+>>>>>>> e2f5eeed54f0317bbc5fbff6429974776caf208a
+        "nodemailer": "^6.9.13",
+        "passport": "^0.7.0",
+        "passport-local": "^1.0.0"
+    }
+}
