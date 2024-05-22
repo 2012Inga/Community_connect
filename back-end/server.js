@@ -23,7 +23,7 @@ dbConnect.connect();
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: '', // Replace with your actual password
+    password: 'YES', // Replace with your actual password
     database: 'community_connect',
 });
 

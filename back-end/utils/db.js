@@ -6,7 +6,7 @@ class MySQLConnect {
         // Define constants for MySQL connection
         const DB_HOST = process.env.DB_HOST || 'localhost';
         const DB_USER = process.env.DB_USER || 'root';
-        const DB_PASSWORD = process.env.DB_PASSWORD || 'root password';    
+        const DB_PASSWORD = process.env.DB_PASSWORD || 'YES';    
         const DB_DATABASE = process.env.DB_DATABASE || 'community_connect';
 
         // Create the MySQL connection object based on the constants
