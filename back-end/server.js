@@ -15,6 +15,7 @@ app.use(bodyParser.json());
 app.use(session({ secret: 'secret', resave: false, saveUninitialized: false }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(express.static('public'));  // Serving static files from public directory
 
 // Connection to MySQL
 dbConnect.connect();
@@ -23,7 +24,7 @@ dbConnect.connect();
 const connection = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'Boyce1962@', 
+    password: 'Boyce1962@',
     database: 'community_connect',
 });
 
