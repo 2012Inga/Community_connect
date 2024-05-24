@@ -7,6 +7,7 @@ const LocalStrategy = require('passport-local').Strategy;
 const session = require('express-session');
 const bcrypt = require('bcrypt');
 const mysql = require('mysql');
+const path = require('path');
 const port = 3000;
 
 // Middleware
@@ -16,9 +17,6 @@ app.use(session({ secret: 'secret', resave: false, saveUninitialized: false }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(express.static('public'));  // Serving static files from public directory
-
-// Connection to MySQL
-dbConnect.connect();
 
 // MySQL Connection
 const connection = mysql.createConnection({
@@ -66,19 +64,7 @@ passport.deserializeUser((id, done) => {
 
 // Express Routes
 app.get('/', (req, res) => {
-    res.send('Welcome to Community Connect!');
-});
-
-app.get('/login', (req, res) => {
-    res.send('This is the login page. Use POST /login to log in.');
-});
-
-app.get('/register', (req, res) => {
-    res.send('This is the register page. Use POST /register to create an account.');
-});
-
-app.get('/events', (req, res) => {
-    res.send('This is the events page. Use POST /events to create an event.');
+    res.sendFile(path.join(__dirname, 'public', 'index.html')); // Serve the index.html file
 });
 
 app.post('/login', (req, res, next) => {
@@ -98,10 +84,14 @@ app.post('/register', (req, res) => {
         if (err) return res.status(500).json({ message: 'Server error' });
         const newUser = {
             username: req.body.username,
-            password: hash
+            password: hash,
+            email: req.body.email  // Ensure this matches the table column name
         };
         connection.query('INSERT INTO users SET ?', newUser, (err, result) => {
-            if (err) return res.status(500).json({ message: 'User registration failed' });
+            if (err) {
+                console.error('Error during user registration:', err);
+                return res.status(500).json({ message: 'User registration failed' });
+            }
             res.json({ message: 'Registration successful', redirectUrl: '/login' });
         });
     });
