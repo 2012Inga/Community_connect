@@ -48,16 +48,16 @@ DROP TABLE IF EXISTS `events`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `events` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `title` varchar(200) NOT NULL,
-  `description` text,
+  `title` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `description` text COLLATE utf8mb4_general_ci,
   `category_id` int DEFAULT NULL,
   `event_date` date DEFAULT NULL,
-  `location` varchar(255) DEFAULT NULL,
+  `location` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
   KEY `category_id` (`category_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -66,7 +66,6 @@ CREATE TABLE `events` (
 
 LOCK TABLES `events` WRITE;
 /*!40000 ALTER TABLE `events` DISABLE KEYS */;
-INSERT INTO `events` VALUES (1,'Community Clean-Up','Join us for a community clean-up event.',1,'2024-06-15','Central Park','2024-05-28 14:33:08','2024-05-28 14:33:08'),(2,'Photography Workshop','Learn the basics of photography in this hands-on workshop.',2,'2024-07-20','City Library','2024-05-28 14:33:08','2024-05-28 14:33:08'),(3,'Summer Social Meetup','Come and enjoy a casual social meetup with local residents.',3,'2024-08-10','Beachside Cafe','2024-05-28 14:33:08','2024-05-28 14:33:08'),(4,'Tech Conference 2024','Annual tech conference with industry experts.',4,'2024-09-05','Convention Center','2024-05-28 14:33:08','2024-05-28 14:33:08');
 /*!40000 ALTER TABLE `events` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -112,8 +111,7 @@ CREATE TABLE `registrations` (
   PRIMARY KEY (`id`),
   KEY `user_id` (`user_id`),
   KEY `event_id` (`event_id`),
-  CONSTRAINT `registrations_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
-  CONSTRAINT `registrations_ibfk_2` FOREIGN KEY (`event_id`) REFERENCES `events` (`id`)
+  CONSTRAINT `registrations_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -145,7 +143,6 @@ CREATE TABLE `testimonials` (
   KEY `user_id` (`user_id`),
   KEY `event_id` (`event_id`),
   CONSTRAINT `testimonials_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`),
-  CONSTRAINT `testimonials_ibfk_2` FOREIGN KEY (`event_id`) REFERENCES `events` (`id`),
   CONSTRAINT `testimonials_chk_1` CHECK (((`rating` >= 1) and (`rating` <= 5)))
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -197,4 +194,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-28 17:59:44
+-- Dump completed on 2024-05-28 18:10:07
