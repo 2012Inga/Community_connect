@@ -24,10 +24,10 @@ DROP TABLE IF EXISTS `event_categories`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `event_categories` (
   `id` int NOT NULL AUTO_INCREMENT,
-  `name` varchar(100) NOT NULL,
-  `description` text,
+  `name` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `description` text COLLATE utf8mb4_general_ci,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -36,7 +36,6 @@ CREATE TABLE `event_categories` (
 
 LOCK TABLES `event_categories` WRITE;
 /*!40000 ALTER TABLE `event_categories` DISABLE KEYS */;
-INSERT INTO `event_categories` VALUES (1,'Community','Community events and activities'),(2,'Workshops','Educational and skill development workshops'),(3,'Social','Social gatherings and meetups'),(4,'Conferences','Professional and business conferences');
 /*!40000 ALTER TABLE `event_categories` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -57,8 +56,7 @@ CREATE TABLE `events` (
   `created_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
   `updated_at` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`),
-  KEY `category_id` (`category_id`),
-  CONSTRAINT `events_ibfk_1` FOREIGN KEY (`category_id`) REFERENCES `event_categories` (`id`)
+  KEY `category_id` (`category_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -199,4 +197,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2024-05-28 17:47:00
+-- Dump completed on 2024-05-28 17:59:44
