@@ -1,4 +1,0 @@
-# Ignore sensitive information on files
-server.js
-db.js
-testConnection.js
