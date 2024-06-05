@@ -22,10 +22,13 @@ Welcome to the Weather App! This web application provides real-time weather info
 
 ## How to Use
 
-1. Clone this repository to your local machine.
-2. Open `index.html` in your web browser.
-3. Enter the name of the city you want to check the weather for in the search bar.
-4. Press Enter or click the search button to view the weather details for the specified city.
+1. Clone this repository or download zip files to your local machine.
+2. Open `index.html` in your web browser, or use your terminal and type "code ." it will launch VSCODE. Make sure you have live server extension downloaded.
+3. Create an account on https://openweathermap.org/ to get your API KEYS, then copy them and paste it in your script.js. In a seaction "Your_API_HERE".
+4. Launch it
+5. Enter the name of the city you want to check the weather for in the search bar.
+6. Press Enter or click the search button to view the weather details for the specified city.
+7. Enjoy !
 
 ## Deployment
 
