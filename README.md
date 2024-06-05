@@ -2,7 +2,7 @@
 # Weather App!
 [sky-background-video-conferencing_23-2148623068](https://github.com/2012Inga/Weather-App/assets/136582441/486e35f2-8426-4e72-abcd-4f809756e5e0)
 
-![Weather App](link_to_cover_image) <!-- Replace 'link_to_cover_image' with the URL of your cover image -->
+![Weather App](link_to_cover_image) <https://images.theconversation.com/files/232705/original/file-20180820-30593-1nxanpj.jpg?ixlib=rb-4.1.0&q=20&auto=format&w=320&fit=clip&dpr=2&usm=12&cs=strip>
 
 ## Introduction
 
