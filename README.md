@@ -1,6 +1,6 @@
 
 # Weather App!
-[![MasterHead](https://i.pinimg.com/originals/e7/b1/8c/e7b18c436f3f643938c223c02d398aff.gif)](https://i.pinimg.com/originals/e7/b1/8c/e7b18c436f3f643938c223c02d398aff.gif)
+[![MasterHead](https://i.pinimg.com/originals/e7/b1/8c/e7b18c436f3f643938c223c02d398aff.gif)]
 
 ## Introduction
 
