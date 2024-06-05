@@ -1,8 +1,5 @@
-[![MasterHead](https://i.pinimg.com/originals/e7/b1/8c/e7b18c436f3f643938c223c02d398aff.gif)](https://i.pinimg.com/originals/e7/b1/8c/e7b18c436f3f643938c223c02d398aff.gif)
-
-
-
 # Weather App!
+[![MasterHead](https://fiverr-res.cloudinary.com/images/t_main1,q_auto,f_auto,q_auto,f_auto/attachments/delivery/asset/1068778a2b8dbcb2a0b1b13258bdb7ed-1681040096/IT_office_closeup_highres/create-a-pixel-art-illustration-or-gif.gif)]
 
 
 ## Introduction
