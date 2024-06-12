@@ -37,6 +37,7 @@ This project can be deployed using any web hosting service that supports static 
 ## Demo
 
 For a live demo of the Weather App, please visit [https://www.veed.io/view/c2158ec3-310d-4092-9874-7b995b051941?panel=share)
+Read about it here https://medium.com/@inganathi2001/introduction-to-weather-app-2996671c49de
 ## Contributions
 
 Contributions are welcome! If you find any issues or have suggestions for improvements, feel free to open an issue or create a pull request.
